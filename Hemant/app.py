@@ -18,7 +18,7 @@ download_nltk_data()
 app = Flask(__name__)
 app.secret_key = '2030'
 
-conn = psycopg2.connect("dbname=new user=postgres password=Animesh@006")
+conn = psycopg2.connect("dbname=database user=root password=database_o8cv")
 cur = conn.cursor()
 
 def create_dat_table():
