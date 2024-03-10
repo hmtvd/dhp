@@ -18,7 +18,25 @@ download_nltk_data()
 app = Flask(__name__)
 app.secret_key = '2030'
 
-conn = psycopg2.connect("dbname=database user=root password=database_o8cv")
+from psycopg2 import OperationalError
+
+def create_conn():
+    conn = None
+    try:
+        # database connection parameters, replace with your actual details
+        conn = psycopg2.connect(
+            dbname="database",
+            user="root",
+            password="database_o8cv",
+            host="localhost",
+            port="5432",
+        )
+        print("Connection to PostgreSQL DB successful")
+    except OperationalError as e:
+        print(f"The error '{e}' occurred")
+    return conn
+
+conn = create_conn()
 cur = conn.cursor()
 
 def create_dat_table():
