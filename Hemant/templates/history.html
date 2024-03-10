@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            background: linear-gradient(180deg, #ffecd2 0%, #ffd8bf 50%, #ffd2df 100%); /* Sunrise Gradient */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            border-radius: 10px;
+            padding: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0; /* Light gray for table header */
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray for even rows */
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Dashboard</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Word Count</th>
+            <th>Sentence Count</th>
+            <th>Stopword Count</th>
+            <th>POS Tags</th>
+            <th>POS Tag Count</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td><body>
+                <h1>Data Dashboard</h1>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Text</th>
+                        <th>Word Count</th>
+                        <th>Sentence Count</th>
+                        <th>Stopword Count</th>
+                        <th>POS Tags</th>
+                        <th>POS Tag Count</th>
+                    </tr>
+                    {% for row in rows %}  <!-- Change 'user' to 'row' -->
+                    <tr>
+                        <td>{{ row[0] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[1] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[2] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[3] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[4] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[5] }}</td>  <!-- Change 'user' to 'row' -->
+                        <td>{{ row[6] }}</td>  <!-- Change 'user' to 'row' -->
+                    </tr>
+                    {% endfor %}
+                </table>
+            </body>
+            
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

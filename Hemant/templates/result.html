@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .result {
+            padding: 20px;
+            border-top: 2px solid #ccc; /* Light gray border at the top of result */
+            margin-top: 20px;
+        }
+
+        .url {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .body {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue submit button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <div class="result">
+            <p class="url">URL: {{ url }}</p>
+            <div class="body">
+                <p>{{ text }}</p>
+            </div>
+            <p>Number of Sentences: {{ num_sentences }}</p>
+            <p>Number of Words: {{ num_words }}</p>
+            <p>POS Counts: {{ pos_counts }}</p>
+        </div>
+    </div>
+    <form action="/">
+        <input type="submit" value="Back">
+    </form>
+</body>
+</html>

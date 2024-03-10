@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #ffe6f2 0%, #ffffff 50%, #ffd9e6 100%); /* Light Pink Sky */
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>View Analysis</h2>
+    <p><strong>URL:</strong> {{ data[1] }}</p> 
+    <p><strong>Num Words:</strong> {{ data[3] }}</p>
+    <p><strong>POS Counts:</strong> {{ data[4] }}</p>
+    <p><strong>Num Sentences:</strong> {{ data[2] }}</p>
+    <p><strong>Full Text:</strong> {{ data[5] }}</p>
+
+    <form action="{{ url_for('history') }}" method="get">
+        <input type="submit" value="Back to History">
+    </form>
+</body>
+</html>
