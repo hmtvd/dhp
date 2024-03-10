@@ -25,10 +25,10 @@ def create_conn():
     try:
         # database connection parameters, replace with your actual details
         conn = psycopg2.connect(
-            dbname="database",
+            dbname="database_o8cv",
             user="root",
-            password="database_o8cv",
-            host="localhost",
+            password="F2UN0PWkaEiVW7d1S3dlHUdhsT4J3LBU",
+            host="dpg-cnmv2p821fec7399860g-a",
             port="5432",
         )
         print("Connection to PostgreSQL DB successful")
