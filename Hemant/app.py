@@ -110,7 +110,7 @@ def process():
         except Exception as e:
             error = f"An error occurred: {str(e)}"
             return render_template("index.html", error=error)
-    return redirect(url_for('index'))
+    return redirect(url_for('index',url=url))
 
 @app.route('/result/<int:id>', methods=['GET'])
 def result(id):
