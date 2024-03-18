@@ -6,14 +6,17 @@ from nltk.corpus import stopwords
 import psycopg2
 import json
 
-def download_nltk_data():
-    # try:
-    #     nltk.download('punkt')
-    #     nltk.download('stopwords')
-    #     nltk.download('averaged_perceptron_tagger')
-    nltk.download('all')
-    except LookupError:
-        pass
+# def download_nltk_data():
+#     # try:
+#     #     nltk.download('punkt')
+#     #     nltk.download('stopwords')
+#     #     nltk.download('averaged_perceptron_tagger')
+#     nltk.download('all')
+#     except LookupError:
+#         pass
+
+nltk.download('all')
+
 
 download_nltk_data()
 app = Flask(__name__)
