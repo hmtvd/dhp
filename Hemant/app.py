@@ -74,7 +74,7 @@ def process():
             article.parse()
             print(3)
             text = article.text
-            text = text[:500]
+            # text = text[:500]
             print(4)
 
             # Process the text and insert into the database
