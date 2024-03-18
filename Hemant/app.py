@@ -106,7 +106,7 @@ def process():
                         (text, word_count, sen_count, stop_count, tag_count_dict, tag_count))
             id = cur.fetchone()[0]
             conn.commit()
-            return redirect(url_for('result', id=id))
+            return redirect(url_for('result', id=id, url=url))
         except Exception as e:
             error = f"An error occurred: {str(e)}"
             return render_template("index.html", error=error,url=url)
