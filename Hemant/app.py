@@ -6,16 +6,14 @@ from nltk.corpus import stopwords
 import psycopg2
 import json
 
-# def download_nltk_data():
-#     # try:
-#     #     nltk.download('punkt')
-#     #     nltk.download('stopwords')
-#     #     nltk.download('averaged_perceptron_tagger')
-#     nltk.download('all')
-#     except LookupError:
-#         pass
-
-nltk.download('all')
+def download_nltk_data():
+    try:
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('averaged_perceptron_tagger')
+        nltk.download('universal_tagset')
+    except LookupError:
+        pass
 
 
 download_nltk_data()
