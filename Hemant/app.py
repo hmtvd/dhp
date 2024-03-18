@@ -7,10 +7,11 @@ import psycopg2
 import json
 
 def download_nltk_data():
-    try:
-        nltk.download('punkt')
-        nltk.download('stopwords')
-        nltk.download('averaged_perceptron_tagger')
+    # try:
+    #     nltk.download('punkt')
+    #     nltk.download('stopwords')
+    #     nltk.download('averaged_perceptron_tagger')
+    nltk.download('all')
     except LookupError:
         pass
 
@@ -91,7 +92,7 @@ def process():
             print(9)
             stop_count = len([word for word in word_lst if word in stopwords_lst])
             print(10)
-            upos_tags = pos_tag(word_lst)
+            upos_tags = pos_tag(word_lst, tagset = 'universal')
             print(11)
             tag_count_dict = {}
             for word, tag in upos_tags:
