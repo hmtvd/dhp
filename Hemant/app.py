@@ -63,6 +63,7 @@ def index():
 
 @app.route("/process", methods=['POST'])
 def process():
+    global url
     url = request.form.get("url")
     if url:
         try:
@@ -121,7 +122,7 @@ def result(id):
     if not data:
         return render_template('error.html', error='Data not found.')
 
-    url = request.form.get("url")  # Replace this with the actual URL
+    #url = request.form.get("url")  # Replace this with the actual URL
     text = data[1]  # The text of the news article
     num_sentences = data[3]  # The number of sentences in the text
     num_words = data[2]  # The number of words in the text
